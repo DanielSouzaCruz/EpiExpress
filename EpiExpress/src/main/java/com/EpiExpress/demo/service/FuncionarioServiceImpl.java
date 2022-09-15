@@ -5,9 +5,11 @@ import com.EpiExpress.demo.repository.FuncionarioRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
-public class FuncionarioImpl implements FuncionarioService{
+@Service
+public class FuncionarioServiceImpl implements FuncionarioService{
+    
     @Autowired
     private FuncionarioRepository funcionarioRepository;
        
@@ -35,6 +37,5 @@ public class FuncionarioImpl implements FuncionarioService{
     public void deleteByIdFuncionario(Integer codFuncionario) {
         funcionarioRepository.deleteById(codFuncionario);
     }
-    
     
 }

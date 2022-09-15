@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "funcionario")
+@Table(name= "funcionario")
 public class Funcionario implements Serializable{
     
     @Id
@@ -81,6 +81,5 @@ public class Funcionario implements Serializable{
     public String toString() {
         return "Funcionario{" + "codFuncionario=" + codFuncionario + ", empresa=" + empresa + ", setor=" + setor + ", funcao=" + funcao + '}';
     }
- 
     
 }

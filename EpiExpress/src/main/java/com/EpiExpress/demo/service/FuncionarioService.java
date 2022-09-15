@@ -1,13 +1,12 @@
-
 package com.EpiExpress.demo.service;
 
 import com.EpiExpress.demo.model.Funcionario;
 import java.util.List;
 import java.util.Optional;
 
-
 public interface FuncionarioService {
-    public Funcionario salvaFuncionario(Funcionario empresa);
+      
+    public Funcionario salvaFuncionario(Funcionario funcionario);
     
     public List<Funcionario> listaFuncionario();
     
@@ -16,4 +15,5 @@ public interface FuncionarioService {
     public Funcionario atualizaFuncionario(Funcionario funcionario);
     
     public void deleteByIdFuncionario(Integer codFuncionario); 
+    
 }

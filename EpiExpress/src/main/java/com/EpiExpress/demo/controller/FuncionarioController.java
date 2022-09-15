@@ -1,4 +1,3 @@
-
 package com.EpiExpress.demo.controller;
 
 import com.EpiExpress.demo.model.Funcionario;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class FuncionarioController {
-   
+    
     @Autowired
     private FuncionarioService funcionarioService;
     
@@ -49,4 +48,5 @@ public class FuncionarioController {
         funcionarioService.deleteByIdFuncionario(codfuncionario);
         return ResponseEntity.status(HttpStatus.OK).body("Funcionario removido com sucesso");
     }
+    
 }
