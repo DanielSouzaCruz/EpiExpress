@@ -23,7 +23,7 @@ public class EmpresaController {
     @Autowired
     private EmpresaService empresaService;
     
-     @GetMapping("/empresa")
+     @GetMapping("/empresas")
     public ResponseEntity<List<Empresa>> listaEmpresa(){
         return ResponseEntity.status(HttpStatus.OK).body(empresaService.listaEmpresa());
     }

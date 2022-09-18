@@ -23,7 +23,7 @@ public class FuncionarioController {
     @Autowired
     private FuncionarioService funcionarioService;
     
-    @GetMapping("/funcionario")
+    @GetMapping("/funcionarios")
     public ResponseEntity<List<Funcionario>> listaFuncionario(){
         return ResponseEntity.status(HttpStatus.OK).body(funcionarioService.listaFuncionario());
     }

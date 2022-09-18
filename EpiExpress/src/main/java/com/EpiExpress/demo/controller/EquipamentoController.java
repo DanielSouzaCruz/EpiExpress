@@ -23,7 +23,7 @@ public class EquipamentoController {
     @Autowired
     private EquipamentoService equipamentoService;
     
-    @GetMapping("/equipamento")
+    @GetMapping("/equipamentos")
     public ResponseEntity<List<Equipamento>> listaEquipamento(){
         return ResponseEntity.status(HttpStatus.OK).body(equipamentoService.listaEquipamentos());
     }

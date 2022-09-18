@@ -49,6 +49,4 @@ public class Declaracao implements Serializable{
         return "Declaracao{" + "codDeclaracao=" + codDeclaracao + ", declaracao=" + declaracao + '}';
     }
     
-    
-    
 }
