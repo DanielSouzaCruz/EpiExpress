@@ -70,6 +70,7 @@ public class Usuario implements Serializable{
 
     @Override
     public String toString() {
-        return "Usuario{" + "codUsuario=" + codUsuario + ", nome=" + nome + ", nivel=" + nivel + ", senha=" + senha + '}';
+        return "Usuario{" + "codUsuario=" + codUsuario + ", nome=" + nome + ", nivel=" + nivel + '}';
     }
+
 }
