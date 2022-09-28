@@ -23,6 +23,9 @@ public class Funcionario implements Serializable{
     @JoinColumn(name = "codempresa", referencedColumnName = "codempresa")
     private Empresa empresa; 
     
+    @Column(name = "nome")
+    private String nome;
+    
     @Column(name = "setor")
     private String setor;
     
@@ -32,18 +35,22 @@ public class Funcionario implements Serializable{
     public Funcionario() {
     }
 
-    public Funcionario(Integer codFuncionario, String setor, String funcao) {
+    public Funcionario(Integer codFuncionario, String nome, String setor, String funcao) {
         this.codFuncionario = codFuncionario;
+        this.nome = nome;
         this.setor = setor;
         this.funcao = funcao;
     }
-        
-    public Funcionario(Integer codFuncionario, Empresa empresa, String setor, String funcao) {
+
+    public Funcionario(Integer codFuncionario, Empresa empresa, String nome, String setor, String funcao) {
         this.codFuncionario = codFuncionario;
         this.empresa = empresa;
+        this.nome = nome;
         this.setor = setor;
         this.funcao = funcao;
     }
+
+    
     
     public Integer getCodFuncionario() {
         return codFuncionario;
@@ -53,6 +60,15 @@ public class Funcionario implements Serializable{
         this.codFuncionario = codFuncionario;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -79,7 +95,9 @@ public class Funcionario implements Serializable{
 
     @Override
     public String toString() {
-        return "Funcionario{" + "codFuncionario=" + codFuncionario + ", empresa=" + empresa + ", setor=" + setor + ", funcao=" + funcao + '}';
+        return "Funcionario{" + "codFuncionario=" + codFuncionario + ", empresa=" + empresa + ", nome=" + nome + ", setor=" + setor + ", funcao=" + funcao + '}';
     }
+
+    
     
 }
