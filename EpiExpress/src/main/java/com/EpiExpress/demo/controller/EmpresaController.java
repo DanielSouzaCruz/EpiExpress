@@ -2,6 +2,10 @@ package com.EpiExpress.demo.controller;
 
 import com.EpiExpress.demo.model.Empresa;
 import com.EpiExpress.demo.service.EmpresaService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@Api("Api Empresas")
 public class EmpresaController {
     
     @Autowired
@@ -29,6 +34,11 @@ public class EmpresaController {
     }
     
     @GetMapping("empresa/{codempresa}")
+    @ApiOperation("Obter detalhes de uma Empresa")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Empresa encontrado"),
+        @ApiResponse(code = 404, message = "Empresa não encontrado")
+    })
     public ResponseEntity<Optional<Empresa>> getByIdEmpresa(@PathVariable Integer codempresa){
         return ResponseEntity.status(HttpStatus.OK).body(empresaService.getByIdEmpresa(codempresa));
     }
