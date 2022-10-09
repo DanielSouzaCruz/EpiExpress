@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@Api("Api Declaracões")
+@Api("Api Declaracoes")
 public class DeclaracaoController {
     @Autowired
     private DeclaracaoService declaracaoService;
@@ -48,7 +48,7 @@ public class DeclaracaoController {
     }
 
     @PostMapping("declaracao")
-    @ApiOperation("Salvar Declaração")
+    @ApiOperation("Salvar Declaração no Banco de Dados")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Declaração Encontrada"),
         @ApiResponse(code = 404, message = "Declaração não Encontrada")
@@ -58,20 +58,20 @@ public class DeclaracaoController {
     }
 
     @PutMapping("declaracao")
-    @ApiOperation("Atualizar Declação")
+    @ApiOperation("Atualizar a Declação")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Declaração Atualizada"),
-        @ApiResponse(code = 404, message = "Declaração não Atualizada")
+        @ApiResponse(code = 404, message = "Falha em Atualizar a Declaração")
     })
     public ResponseEntity<Declaracao> atualizaDeclaracao(@RequestBody Declaracao declaracao){
         return ResponseEntity.status(HttpStatus.OK).body(declaracaoService.atualizaDeclaracao(declaracao));
     }
 
     @DeleteMapping("declaracao/{coddeclaracao}")
-    @ApiOperation("Deletar uma Declaração")
+    @ApiOperation("Deletar a Declaração pelo codigo")
     @ApiResponses({
-        @ApiResponse(code = 200, message = "Declaração Deletada"),
-        @ApiResponse(code = 404, message = "Declaração Não Deletada")
+        @ApiResponse(code = 200, message = "Declaração Deletada com Sucesso"),
+        @ApiResponse(code = 404, message = "Falha ao Deletar")
     })
     public ResponseEntity<String> deleteByIdDeclaracao(@PathVariable Integer coddeclaracao){
         declaracaoService.deleteByIdDeclaracao(coddeclaracao);

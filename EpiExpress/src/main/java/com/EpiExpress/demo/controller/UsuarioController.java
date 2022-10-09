@@ -49,7 +49,7 @@ public class UsuarioController {
     }
 
     @PostMapping("usuario")
-    @ApiOperation("Salvar um Usuario")
+    @ApiOperation("Salvar Usuario no Banco de Dados")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Usuario Salvo"),
         @ApiResponse(code = 404, message = "Usuario Não Salvo")
@@ -62,7 +62,7 @@ public class UsuarioController {
     @ApiOperation("Atualizar um Usuario")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Usuario Atualizado"),
-        @ApiResponse(code = 404, message = "Usuario Não Atualizado")
+        @ApiResponse(code = 404, message = "Falha em Atualizar o Usuario")
     })
     public ResponseEntity<Usuario> atualizaUsuario(@RequestBody Usuario usuario){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.atualizaUsuario(usuario));

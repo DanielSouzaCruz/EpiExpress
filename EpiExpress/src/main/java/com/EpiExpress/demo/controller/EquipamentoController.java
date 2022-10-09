@@ -49,7 +49,7 @@ public class EquipamentoController {
     }
 
     @PostMapping("equipamento")
-    @ApiOperation("Salvar Equipamento")
+    @ApiOperation("Salvar Equipamento no Banco de Dados")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Equipamento Salvo"),
         @ApiResponse(code = 404, message = "Equipamento não Salvo")
@@ -69,7 +69,7 @@ public class EquipamentoController {
     }
     
     @DeleteMapping("equipamento/{codequipamento}")
-    @ApiOperation("Deletar um Equipamento")
+    @ApiOperation("Deletar Equipamento pelo Codigo")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Equipamento Deletado"),
         @ApiResponse(code = 404, message = "Equipamento não Deletado")

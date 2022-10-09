@@ -28,18 +28,18 @@ public class EmpresaController {
     @Autowired
     private EmpresaService empresaService;
     
-     @GetMapping("/empresas")
-     @ApiOperation("Obter detalhes de uma Empresa")
+    @GetMapping("/empresas")
+    @ApiOperation("Obter detalhes de uma Empresa")
     @ApiResponses({
-        @ApiResponse(code = 200, message = "Empresa encontrado"),
-        @ApiResponse(code = 404, message = "Empresa não encontrado")
+        @ApiResponse(code = 200, message = "Empresa Encontrado"),
+        @ApiResponse(code = 404, message = "Empresa não Encontrado")
     })
     public ResponseEntity<List<Empresa>> listaEmpresa(){
         return ResponseEntity.status(HttpStatus.OK).body(empresaService.listaEmpresa());
     }
     
     @GetMapping("empresa/{codempresa}")
-    @ApiOperation("Procurar Empresa pelo Codigo")
+    @ApiOperation("Procurar uma Empresa pelo Codigo")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Empresa encontrado"),
         @ApiResponse(code = 404, message = "Empresa não encontrado")
@@ -47,7 +47,6 @@ public class EmpresaController {
     public ResponseEntity<Optional<Empresa>> getByIdEmpresa(@PathVariable Integer codempresa){
         return ResponseEntity.status(HttpStatus.OK).body(empresaService.getByIdEmpresa(codempresa));
     }
-    
     
     @PostMapping("empresa")
     @ApiOperation("Salvar Empresa no banco de dados")
@@ -60,7 +59,7 @@ public class EmpresaController {
     }
 
     @PutMapping("empresa")
-    @ApiOperation("Atualizar Empresa")
+    @ApiOperation("Atualizar uma Empresa")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Empresa Atualizada"),
         @ApiResponse(code = 404, message = "Falha em Atualizar a Empresa")
@@ -70,7 +69,7 @@ public class EmpresaController {
     }
 
     @DeleteMapping("empresa/{codempresa}")
-    @ApiOperation("Deletar Empresa pelo codigo da empresa")
+    @ApiOperation("Deletar Empresa pelo codigo")
     @ApiResponses({
         @ApiResponse(code = 200, message = "Empresa Deletada Com Sucesso"),
         @ApiResponse(code = 404, message = "Falha ao Deletar")
